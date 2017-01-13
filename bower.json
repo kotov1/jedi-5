@@ -1,0 +1,22 @@
+{
+  "name": "optimizedhtml",
+  "description": "OptimizedHTML - Start HTML Template",
+  "main": "index.js",
+  "authors": [
+    "xxx"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kotov1/jedi-5",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.2.1",
+    "Boostrap Grid": "bootstrap-grid-css#*"
+  }
+}
