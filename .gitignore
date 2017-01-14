@@ -1,6 +1,7 @@
 /node_modules/
 /app/css/
 /app/libs/
+/app/.htaccess
 /dist/
 /**/*.psd
 /**/*.png
