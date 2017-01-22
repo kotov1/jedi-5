@@ -1,4 +1,5 @@
 @import "bourbon"
+@import "normalize"
 @import "fonts"
 @import "libs"
 @import "vars"
@@ -41,5 +42,116 @@ body
 	display: block
 	max-width: 100%
 	height: auto
+
+input
+	border: none
+
+
+// ------------------------------------------some general styles------------------------------------
+
+*
+	box-sizing: border-box
+
+body
+	font: em(15px) $default-font
+	color: $main-color
+
+
+h2 
+	font: em(30px) 'PFCentroSlabProMedium', sans-serif;
+	line-height: em(36px)
+	color: #2c3949
+	text-transform: uppercase
+	text-align: center
+	
+	&::after
+		content: ''
+		display: block
+		width: 165px
+		height: 3px
+		margin: 0 auto
+		background: $accent
+
+.btn
+	width: 175px
+	height: 50px
+	background: $accent
+	box-shadow: inset 0 -3px 0 rgba(#b97200, .75)
+
+b, strong
+	font-weight: normal
+	font-family: $bold-font
+
+a
+	font-family: 'RobotoBold', sans-serif
+
+.ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+.active
+	a
+		color: $accent
+		text-decoration: underline
+	// -----------------------------------------------------------------------------------
+
+header
+	height: 100%;
+	position: relative
+	background: url(../img/header_bg.jpg) no-repeat 50%
+	background-size: cover
+	color: #fff
+
+.top-line
+	padding-top: em(60px)
+
+img[src*=logo]
+	width: 100px
+	height: 47px
+
+.top-nav
+	line-height: 51px
+	@extend .ul
+	li
+		display: inline-block
+		font-size: em(15px)
+		padding-right: em(20px)
+		&:last-child
+			padding-right: 0
+	a
+		font-family: 'RalewayRegular', sans-serif
+
+.tel
+	text-align: right
+	font: em(20px) 'RobotoBold', sans-serif
+	a
+		line-height: 51px
+		color: #fff
+		text-decoration: none
+
+
+.header-overlay
+	width: 100%
+	height: 100%
+	position: absolute
+	z-index: 
+	background-color: #394b5f
+	opacity: .8
+	&::before
+		content: ''
+		width: 100%
+		height: 100%
+		display: block
+		position: absolute
+		background: url(../img/top_gradient.png) repeat-x
+		background-position: 0 0
+		z-index: 1
+
+
+
+
+
+
 
 @import "media" // Всегда в конце
