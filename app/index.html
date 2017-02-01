@@ -31,29 +31,70 @@
 <body>
 
 <header>
-	<div class="header-overlay"></div>
-	<div class="container">
-		<div class="row">
-			<div class="top-line">
-				<div class="col-md-3">
-					<img src="img/logo.svg" alt="Armata Financial Group">
+
+	<div class="header-top-line">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-xs-3 col-md-3">
+					<a href="/" class="logo"><img src="img/logo.svg" alt="Armata Financial Group"></a>
 				</div>
-				<div class="col-md-7">
-					<ul class="top-nav">
-						<li class="active"><a href="#">Главная</a></li>
-						<li><a href="#">О компании</a></li>
-						<li><a href="#">Оценка</a></li>
-						<li><a href="#">Сделки M&amp;A</a></li>
-						<li><a href="#">Бухгалтерские услуги</a></li>
-						<li><a href="#">Контакты</a></li>
-					</ul>
-				</div>
-				<div class="col-md-2 tel">
+
+				<div class="col-xs-7 col-md-2 col-md-push-7 tel">
 					<a href="tel:+7495009956">+7 (495) 00-99-56</a>
 				</div>
+
+				<div class="col-xs-2 col-md-7 col-md-pull-2 top-menu">
+					<a href="#top-nav" class="toggle-menu links-hover"><span></span></a>
+					<nav id="top-nav" class="top-nav">
+						<ul>
+							<li class="active"><a href="#">Главная</a></li>
+							<li><a href="#">О компании</a></li>
+							<li><a href="#">Оценка</a></li>
+							<li><a href="#">Сделки M&amp;A</a></li>
+							<li><a href="#">Бухгалтерские услуги</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+
 			</div>
 		</div>
 	</div>
+
+	<div class="header-bottom-line">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-8">
+					<h1>Armata Financical Group</h1>
+					<ul><a href="#"></a>
+						<li><a href="#">Независимая оценка имущества</a></li>
+						<li><a href="#">Сделки cлияния и поглощения</a></li>
+						<li><a href="#">Бухгалтерские услуги</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4">
+					<form action="#">
+						<div class="form-head">
+							<h4>Заявка:</h4>
+							<p>Оставьте заявку и мы свяжемся с вами в течение 15 минут в рабочее время с 10:00 до 18:00 c пн-пт.</p>
+						</div>
+						<label for="">Ваше имя:
+							<input type="text" name="name" placeholder="Иван" required>
+						</label>
+						<label for="">Ваш телефон:
+							<input type="tel" name="phone" placeholder="+7 (123) 456 78 90" required>
+						</label>
+						<input type="submit" value="Отправить">
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
 </header>
 
 

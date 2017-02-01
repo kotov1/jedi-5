@@ -4,28 +4,34 @@
 @import "libs"
 @import "vars"
 
-*::-webkit-input-placeholder
-	color: #666
-	opacity: 1
 
-*:-moz-placeholder
-	color: #666
-	opacity: 1
+// *::-webkit-input-placeholder
+// 	color: #fff
+// 	font-size: em(19px)
+// 	opacity: .5
 
-*::-moz-placeholder
-	color: #666
-	opacity: 1
+// *:-moz-placeholder
+// 	font-size: em(19px)
+// 	color: #fff
+// 	opacity: .5
 
-*:-ms-input-placeholder
-	color: #666
-	opacity: 1
+// *::-moz-placeholder
+// 	color: #fff
+// 	font-family: $helvetica
+// 	font-size: em(19px)
+// 	opacity: .5
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
+// *:-ms-input-placeholder
+// 	color: #fff
+// 	font-size: em(19px)
+// 	opacity: .5
+
+// body input:focus:required:invalid,
+// body textarea:focus:required:invalid
+// 	color: #fff
+// body input:required:valid,
+// body textarea:required:valid
+// 	color: #fff
 
 html, body
 	height: 100%
@@ -70,49 +76,111 @@ h2
 		width: 165px
 		height: 3px
 		margin: 0 auto
-		background: $accent
+		background: $accent-color
 
 .btn
 	width: 175px
 	height: 50px
-	background: $accent
+	background: $accent-color
 	box-shadow: inset 0 -3px 0 rgba(#b97200, .75)
 
 b, strong
 	font-weight: normal
 	font-family: $bold-font
 
+// ----------------------------------------a:hover--------------------------
 a
+	position: relative
 	font-family: 'RobotoBold', sans-serif
+	color: #fff 
+	text-decoration: none
+	&::after
+		content: ''
+		position: absolute
+		width: 100%
+		height: 1px
+		bottom: 0
+		left: 0
+		background-color: $accent-color
+		visibility: hidden
+		transform: scaleX(0)
+		transition: all .5s
+	&:hover::after
+		visibility: visible
+		transform: scaleX(1)
 
+.logo, .toggle-menu
+	&:hover::after
+		display: none
+
+
+.active
+	a
+		color: $accent-color !important
+		// text-decoration: underline !important
+		&::after
+			visibility: visible
+			transform: scaleX(1)
+		&:hover::after
+			visibility: hidden
+			transform: scaleX(0)
+
+// @extend
 .ul
 	margin: 0
 	padding: 0
 	list-style-type: none
 
-.active
-	a
-		color: $accent
-		text-decoration: underline
+.submit
+	padding: 10px 30px
+	background-color: $accent-color
+	color: #000
+	font: em(18px) 'PFCentroSlabProBold', $helvetica
+	box-shadow: 0 2px 0 #b97200
+
+
 	// -----------------------------------------------------------------------------------
 
 header
-	height: 100%;
+	// min-height: 620px
 	position: relative
+	padding-bottom: 100px
 	background: url(../img/header_bg.jpg) no-repeat 50%
 	background-size: cover
 	color: #fff
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #394b5f
+		opacity: .85
 
-.top-line
+
+.header-top-line
 	padding-top: em(60px)
+	padding-bottom: em(105px)
+	background: url(../img/top_gradient.png) repeat-x
+	background-position: 0 0
+	background-origin: padding-box
+
 
 img[src*=logo]
 	width: 100px
-	height: 47px
+
+.top-menu
+	text-align: right
+	position: relative
 
 .top-nav
+	position: absolute
 	line-height: 51px
-	@extend .ul
+	text-align: left
+	z-index: 2
+	ul
+		@extend .ul
 	li
 		display: inline-block
 		font-size: em(15px)
@@ -121,6 +189,58 @@ img[src*=logo]
 			padding-right: 0
 	a
 		font-family: 'RalewayRegular', sans-serif
+		color: #fff
+		text-decoration: none
+		&:hover
+			color: $accent-color
+
+
+// ------------------------Toggle menu-------------------------
+.toggle-menu 
+	display: none
+	width: 28px
+	margin: 15px auto 10px
+
+
+.toggle-menu span:after,
+.toggle-menu span:before 
+	content: ""
+	position: absolute
+	left: 0
+	top: -9px
+
+.toggle-menu span:after
+	top: 9px
+
+.toggle-menu span 
+	position: relative
+	display: inline-block
+
+
+.toggle-menu span,
+.toggle-menu span:after,
+.toggle-menu span:before 
+	width: 100%
+	height: 3px
+	background-color: #fff
+	transition: all 0.3s
+	backface-visibility: hidden
+	border-radius: 2px
+
+/* on activation */
+.toggle-menu.on span 
+	background-color: transparent
+
+.toggle-menu.on span:before 
+	transform: rotate(45deg) translate(5px, 5px)
+
+.toggle-menu.on span:after 
+	transform: rotate(-45deg) translate(7px, -8px)
+
+.toggle-menu.on + #top-nav
+	display: block
+
+// ------------------------------Toggle menu end------------------------------
 
 .tel
 	text-align: right
@@ -129,27 +249,93 @@ img[src*=logo]
 		line-height: 51px
 		color: #fff
 		text-decoration: none
-
-
-.header-overlay
-	width: 100%
-	height: 100%
-	position: absolute
-	z-index: 
-	background-color: #394b5f
-	opacity: .8
-	&::before
-		content: ''
-		width: 100%
-		height: 100%
-		display: block
-		position: absolute
-		background: url(../img/top_gradient.png) repeat-x
-		background-position: 0 0
-		z-index: 1
+		white-space: nowrap
+		&::after
+			background-color: #FFF
 
 
 
+
+// -----------------------------------------header-bottom-line-----------------------------------
+.header-bottom-line
+	h1
+		display: inline-block
+		margin-top: 135px
+		font: em(48px) 'PFCentroSlabProMedium', $helvetica
+		line-height: 30px
+		&::after
+			content: ''
+			display: inline-block
+			width: 100%
+			height: 8px
+			margin: 0 auto
+			border-radius: 2px
+			background: $accent-color
+
+	ul
+		@extend .ul
+		margin-top: 15px
+		font: em(18px) 'RalewaySemiBold', $helvetica
+		li 
+			margin-bottom: 10px
+			padding-left: 15px
+			position: relative
+			&::before
+				content: ''
+				display: inline-block
+				position: absolute
+				top: 7px
+				left: 0
+				@include triangle(11px 6px, $accent-color, right)
+	a
+		&::after
+			height: 2px
+
+	form
+		padding: 30px 30px 35px
+		background-color: #243343
+		opacity: .85
+		box-shadow: 0 3px 0 #1a232d
+
+		.form-head
+			margin-bottom: 30px
+			padding: 0 5px
+
+		h4
+			margin: 0
+			font: em(28px) 'PFCentroSlabProMedium', $helvetica
+
+		p
+			font-size: em(14px)
+			color: #97a4b2
+
+		label
+			display: block
+			font-size: em(14px)
+			color: #778390
+			letter-spacing: .9px
+		input[type="text"],
+		input[type="tel"]
+			display: block
+			width: 100%
+			height: 40px
+			margin: 5px 0 20px 0
+			padding: 0 5px
+			background-color: #34465a
+			box-shadow: 0 -3px 0 #1a232d
+			font: em(18px) $helvetica
+			color: #fff
+			opacity: .5
+			&:focus
+				color: #fff
+				opacity: 1
+				&::-moz-placeholder
+					opacity: 0
+
+		input[type="submit"]
+			display: block
+			margin: 30px auto 0
+			@extend .submit
 
 
 
