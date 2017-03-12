@@ -10,11 +10,20 @@
 		.tel
 			font-size: em(18px)
 
+	.header-bottom-line
+		input[type="submit"]
+			font-family: 'RobotoBold'
+
+
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	header
-		
+	a
+		outline: none
 
+	.content-wrap
+		padding-top: 0
+
+	header
 	.top-nav
 		display: none
 		min-width: 260px
@@ -59,15 +68,55 @@
 		form
 			margin-top: 40px
 
+	section
+		padding-top: 40px
+		h2
+			font-size: 1.5em
+
+	.evaluation-content
+		margin-top: 0
+		padding-top: 20px
+
+		.moved-top 
+			margin-top: 0
+
+		.row
+			margin-bottom: 0
+
+		div[class*="col"]
+			padding: 0 20px
+
+	.evaluation-content-down
+		padding-bottom: 50px
+
+	.deals
+		.img-wrap
+			margin-top: 50px
+	/**/
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	.center
+		text-align: center
+
+	.evaluation-content
+		div
+			text-align: center
+
+	.s1_scales
+		visibility: hidden
+
+	h3
+		font-size: em(20px)
 	/**/
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+	.deals
+		.img-wrap+span
+			font-size: em(12px)
 	/**/
 
 
