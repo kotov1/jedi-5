@@ -6,7 +6,9 @@ $(document).ready(function() {
 		return false;
 	});
 
-	
+
+	$(".services .section-content .info-item").equalHeights();
+
 
 	//SVG Fallback
 	if(!Modernizr.svg) {
