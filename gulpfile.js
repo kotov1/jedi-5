@@ -1,24 +1,27 @@
-var gulp          	 = require('gulp'),
-		gutil          = require('gulp-util' ),
-		sass           = require('gulp-sass'),
-		browserSync    = require('browser-sync'),
-		concat         = require('gulp-concat'),
-		uglify         = require('gulp-uglify'),
-		cleanCSS       = require('gulp-clean-css'),
-		rename         = require('gulp-rename'),
-		del            = require('del'),
-		imagemin       = require('gulp-imagemin'),
-		cache          = require('gulp-cache'),
-		autoprefixer   = require('gulp-autoprefixer'),
-		bourbon        = require('node-bourbon'),
-		ftp            = require('vinyl-ftp'),
-		notify         = require("gulp-notify");
+var 	gulp          	 	= require('gulp'),
+		gutil          		= require('gulp-util' ),
+		sass           		= require('gulp-sass'),
+		browserSync    	= require('browser-sync'),
+		concat         	= require('gulp-concat'),
+		uglify         		= require('gulp-uglify'),
+		cleanCSS       	= require('gulp-clean-css'),
+		rename         	= require('gulp-rename'),
+		del            		= require('del'),
+		imagemin       	= require('gulp-imagemin'),
+		cache          	= require('gulp-cache'),
+		autoprefixer   	= require('gulp-autoprefixer'),
+		bourbon        	= require('node-bourbon'),
+		ftp            		= require('vinyl-ftp'),
+		notify         		= require("gulp-notify"),
+		comb				= require('gulp-csscomb');
 
 // Скрипты проекта
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/js/common.js', // Всегда в конце
+		'app/libs/jQuery.equalHeights/jquery.equalheights.min.js',
+		'app/libs/waypoints/lib/jquery.waypoints.min.js',
+		'app/js/common.js' // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify())
@@ -105,3 +108,14 @@ gulp.task('removedist', function() { return del.sync('dist'); });
 gulp.task('clearcache', function () { return cache.clearAll(); });
 
 gulp.task('default', ['watch']);
+
+
+// gulp.task('csscomb' function(){
+// 	var comb = new Comb('zen');
+// 	comb.processPath('assets/css');
+// })
+gulp.task('csscomb', function() {
+  return gulp.src('app/css/main.min.css')
+    .pipe(comb())
+    .pipe(gulp.dest('app/css/main'));
+});

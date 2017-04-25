@@ -7,7 +7,21 @@ $(document).ready(function() {
 	});
 
 
-	$(".services .section-content .info-item").equalHeights();
+	$(".advantages .cards .card").equalHeights();
+
+
+	$(".advantages").waypoint(function() {
+
+		$(".advantages .card").each(function(index) {
+			var ths = $(this);
+			setInterval(function() {
+				ths.addClass("animated flipInY");
+			}, 250*index);
+		});
+
+	}, {
+		offset : "20%"
+	});
 
 
 	//SVG Fallback

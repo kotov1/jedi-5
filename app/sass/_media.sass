@@ -93,7 +93,7 @@
 	.evaluation
 		.section-content
 			div[class*='col']
-				padding: 0 40px 0 60px
+				padding: 0 50px
 
 	.section-content-down
 		padding-bottom: 50px
@@ -105,9 +105,6 @@
 	.services
 		.img-wrap
 			margin-top: 50px
-
-
-
 
 
 
@@ -151,6 +148,14 @@
 		.img-wrap
 			display: none
 
+	.advantages
+		.card
+			&:nth-child(2)
+				margin-right: 0
+
+
+
+
 
 
 
@@ -161,8 +166,21 @@
 @media only screen and (max-width : 480px)
 	.deals
 		.img-wrap+span
-			font-size: em(12px)
+			font-size: em(13px)
+
+	.deals
+		h3
+			a
+				&::after
+					display: none
+
+
+
+
+
+
 	/**/
+
 
 
 /* Custom, iPhone Retina */
@@ -186,7 +204,7 @@
 
 
 
-
+	/**/
 
 
 /*==========  Mobile First  ==========*/
