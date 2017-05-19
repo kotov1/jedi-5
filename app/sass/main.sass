@@ -166,7 +166,7 @@ h4 a
 	list-style-type: none
 
 .submit
-	padding: 10px 30px
+	padding: 10px 40px
 	background-color: $accent-color
 	color: #000
 	font: em(18px) 'PFCentroSlabProBold', $helvetica
@@ -480,10 +480,10 @@ section
 
 
 
-	button
-		display: inline-block
-		@extend .submit
-		border: none
+button
+	display: inline-block
+	@extend .submit
+	border: none
 // ----------------------------------------------------- section 1 end ----------------------------------------
 
 // ----------------------------------------------------- section 2 ----------------------------------------
@@ -613,23 +613,80 @@ section
 			max-width: 75px
 			max-height: 70px
 
+	.interactive
+		background: #d6d6d6
+
 	h5
 		margin-top: 40px
+// ----------------------------------------------------- section 4 end--------------------------------------------
+
+// ----------------------------------------------------- section 5 --------------------------------------------
+.howWeWork
+	background-color: #2c3949
+	&::before
+		background-image: url("../img/bah_2.png")
+
+	h2
+		color: #fff
+
+	.section-content
+		margin-top: 0
+		padding-bottom: 80px
+		font: em(18px) 'PFCentroSlabProMedium', $helvetica
+		color: #fff
+
+	.work-stages-wrap
+		margin: 0 auto
+		text-align: center
+
+	.work-stages
+		display: inline-block
+		position: relative
+		width: 290px
+		height: 128px
+		margin-left: -45px
+		&:first-child
+			margin-left: 45px
+		.svg-wrap
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+
+	.work-stages-content
+		position: relative
+		margin-top: 40px
+		padding-left: 60px
+		z-index: 2
+		text-align: left
+		img
+			height: 37px
+			float: left
+			margin-right: 15px
+		p
+			margin-left: 40px
+			vertical-align: top
+			span
+				float: left
+				padding-right: 7px
+				font: em(22px) 'PFCentroSlabProBold', $helvetica
+
+
+
+	.interactive
+		background: #394b5f
+
+
+
+// ----------------------------------------------------- section 5 end --------------------------------------------
+
+
 
 
 
 h3
 	a
 		text-decoration: none
-
-
-
-
-
-
-
-
-
 
 
 @import "media" // Всегда в конце
