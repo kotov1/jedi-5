@@ -484,6 +484,10 @@ button
 	display: inline-block
 	@extend .submit
 	border: none
+	border-radius: 3px
+	transition: all .4s
+	&:hover
+		transform: scale(1.1)
 // ----------------------------------------------------- section 1 end ----------------------------------------
 
 // ----------------------------------------------------- section 2 ----------------------------------------
@@ -599,16 +603,20 @@ button
 		background-color: #2c3949
 
 
+.icon-wrap
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 120px
+	height: 115px
+	margin: 15px auto 0
+	border-radius: 50%
+	background-color: $accent-color
+	text-align: center
+	overflow: hidden
+
+.advantages
 	.icon-wrap
-		display: flex
-		justify-content: center
-		align-items: center
-		width: 120px
-		height: 115px
-		margin: 15px auto 0
-		border-radius: 50%
-		background-color: $accent-color
-		text-align: center
 		img
 			max-width: 75px
 			max-height: 70px
@@ -631,7 +639,7 @@ button
 
 	.section-content
 		margin-top: 0
-		padding-bottom: 80px
+		padding-bottom: 60px
 		font: em(18px) 'PFCentroSlabProMedium', $helvetica
 		color: #fff
 
@@ -645,6 +653,9 @@ button
 		width: 290px
 		height: 128px
 		margin-left: -45px
+		transition: all .3s
+		&:hover
+			transform: scale(1.07)
 		&:first-child
 			margin-left: 45px
 		.svg-wrap
@@ -676,9 +687,54 @@ button
 	.interactive
 		background: #394b5f
 
-
-
 // ----------------------------------------------------- section 5 end --------------------------------------------
+
+// ----------------------------------------------------- section 6 ------------------------------------------------
+.feedback
+	.section-content
+		padding-top: 0
+
+
+
+.team
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-around
+	align-items: center
+	visibility: hidden 	//для корректной работы animate.css .team изначально hidden, а добавляемому с помощью jquery классу .animate - visible
+	h5
+		margin-bottom: 5px
+		font-size: em(18px)
+		color: #333
+		text-transform: none
+	p
+		text-align: center
+		color: #6e7b8b
+		font-size: em(14px)
+	.team-phone
+		margin-top: 20px
+		font: em(18px) 'RobotoBold', $helvetica
+		color: #333
+	.icon-wrap
+		img
+			width: 100%
+
+.team-member
+	max-width: 260px
+	flex: 1 1 260px
+	margin-top: 40px
+	padding: 45px 25px 35px
+	background-color: #e5e5e5
+	border-bottom: 3px solid #d6d6d6
+
+
+
+
+
+
+
+
+// ----------------------------------------------------- section 6 end --------------------------------------------
 
 
 

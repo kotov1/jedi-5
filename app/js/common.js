@@ -7,10 +7,11 @@ $(document).ready(function() {
 	});
 
 
-	$(".advantages .cards .card").equalHeights();
+	$(".advantages .cards .card").equalHeights(),
+	$(".feedback .team .team-member").equalHeights();
 
 
-	$(".advantages").waypoint(function() {
+	$(".advantages").waypoint(function() {		//animation in section "advantages"
 
 		$(".advantages .card").each(function(index) {
 			var ths = $(this);
@@ -22,6 +23,21 @@ $(document).ready(function() {
 	}, {
 		offset : "20%"
 	});
+
+	$(".feedback").waypoint(function() {		//animation in section "feedback"
+
+		$(".feedback .team-member").each(function(index) {
+			var ths = $(this);
+			setInterval(function() {
+				ths.addClass("animated zoomIn");
+			}, 250*index);
+		});
+
+	}, {
+		offset : "20%"
+	});
+
+
 
 
 	//SVG Fallback
