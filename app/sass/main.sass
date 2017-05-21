@@ -655,7 +655,11 @@ button
 		margin-left: -45px
 		transition: all .3s
 		&:hover
-			transform: scale(1.07)
+			svg
+				transform: scale(1.07)
+				path
+					fill-opacity: 0 !important
+					stroke-opacity: 1 !important
 		&:first-child
 			margin-left: 45px
 		.svg-wrap
