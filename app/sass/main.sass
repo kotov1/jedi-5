@@ -312,6 +312,7 @@ img[src*=logo]
 			border-radius: 2px
 			background: $accent-color
 
+.header-bottom-line, .professionals
 	ul
 		@extend .ul
 		margin-top: 15px
@@ -713,7 +714,7 @@ button
 	h5
 		margin-bottom: 5px
 		font-size: em(18px)
-		color: #333
+		color: $main-color
 		text-transform: none
 	p
 		text-align: center
@@ -722,7 +723,7 @@ button
 	.team-phone
 		margin-top: 20px
 		font: em(18px) 'RobotoBold', $helvetica
-		color: #333
+		color: $main-color
 	.icon-wrap
 		img
 			width: 100%
@@ -765,7 +766,7 @@ button
 	h5
 		margin-bottom: 10px
 		font-size: em(18px)
-		color: #333
+		color: $main-color
 		text-transform: none
 	.comment-descr
 		margin-bottom: 20px
@@ -775,7 +776,7 @@ button
 	p
 		padding: 0 210px
 		font-size: em(15px)
-		color: #333
+		color: $main-color
 
 	.owl-carousel
 		.owl-nav
@@ -797,10 +798,49 @@ button
 				span
 					background-color: $accent-color
 
-
-
-
 // ----------------------------------------------------- section 7 end --------------------------------------------
+
+// ----------------------------------------------------- section 8 --------------------------------------------
+.professionals
+	h2
+		margin-top: 0
+		text-align: left
+		&::after
+			margin: 0
+	.awards
+		display: flex
+		justify-content: space-between
+		text-align: center
+		margin-top: 45px
+	.awards-item
+		flex: 0 1 160px
+		// display: inline-block
+		// margin-right: 80px
+		// &:last-child
+		// 	margin-right: 0
+		p
+			font: em(14px) 'RalewayBold', $helvetica
+	.img-wrap
+		img
+			max-height: 64px
+
+	form
+		box-shadow: 0 3px 0 #828282
+		background-color: #ddd
+		h4
+			color: #2c3949
+		p
+			color: #5e6267
+		label
+			color: #778390
+		input[type="text"],
+		input[type="tel"]
+			background-color: #c0c0c0
+			color: #1a1919
+			&:focus
+				color: $main-color
+
+// ----------------------------------------------------- section 8 end --------------------------------------------
 
 
 
