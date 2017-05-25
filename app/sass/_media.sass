@@ -5,7 +5,7 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-	header
+	header, footer
 		font-size: em(14px)
 		.tel
 			font-size: em(18px)
@@ -23,8 +23,9 @@
 			&:last-child
 				margin-left: 45px
 
-
-
+	.comments
+		p
+			padding: 0 206px
 
 
 
@@ -38,7 +39,6 @@
 	.content-wrap
 		padding-top: 0
 
-	header
 	.top-nav
 		display: none
 		min-width: 260px
@@ -59,8 +59,11 @@
 			line-height: 40px
 			text-transform: uppercase
 			transition: all .5s
-			&:hover
-				background-color: #2e3d4d
+	header
+		.top-nav
+			a
+				&:hover
+					background-color: #2e3d4d
 	.toggle-menu
 		display: inline-block
 
@@ -122,6 +125,18 @@
 			&:nth-child(3)
 				margin-left: 45px
 
+	.comments
+		p
+			padding: 0 100px
+
+
+	footer
+		.menu
+			opacity: 1
+		.top-nav
+			position: relative
+			top: 30px
+			right: 0
 
 
 
@@ -178,6 +193,25 @@
 			.work-stages
 				margin: 0
 
+	.professionals
+		h2,p
+			text-align: center
+		h2
+			&::after
+				margin: 0 auto
+		.awards
+			justify-content: center
+			margin-bottom: 30px
+		form
+			p
+				text-align: left
+
+	.comments
+		p
+			padding: 0 75px
+
+
+
 
 
 
@@ -201,7 +235,9 @@
 			padding-left: 20px
 			padding-right: 20px
 
-
+	.comments
+		p
+			padding: 0 40px
 
 
 
@@ -224,8 +260,7 @@
 	.tel
 		a
 			line-height: 36px
-	.top-menu
-		// margin-right: 20px
+	.menu
 		line-height: 0
 
 	.header-bottom-line
@@ -235,6 +270,16 @@
 			text-align: center
 			&::after
 				height: 6px
+
+	.comments
+		p
+			padding: 0 10px
+
+
+
+
+
+
 
 
 

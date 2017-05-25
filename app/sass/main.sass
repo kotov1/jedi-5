@@ -210,7 +210,7 @@ header
 img[src*=logo]
 	width: 100px
 
-.top-menu
+.menu
 	text-align: right
 	position: relative
 
@@ -347,7 +347,7 @@ img[src*=logo]
 			font: em(28px) 'PFCentroSlabProMedium', $helvetica
 
 		p
-			font-size: em(14px)
+			font-size: em(15px)
 			color: #97a4b2
 
 		label
@@ -392,7 +392,7 @@ img[src*=logo]
 			transform: scaleX(0)
 
 // -----------------------------------------------section 1 ------------------------------------------
-section
+section, footer
 	position: relative
 	&::before
 		content: ''
@@ -802,6 +802,7 @@ button
 
 // ----------------------------------------------------- section 8 --------------------------------------------
 .professionals
+	margin-bottom: 70px
 	h2
 		margin-top: 0
 		text-align: left
@@ -809,15 +810,12 @@ button
 			margin: 0
 	.awards
 		display: flex
+		flex-flow: row wrap
 		justify-content: space-between
 		text-align: center
 		margin-top: 45px
 	.awards-item
 		flex: 0 1 160px
-		// display: inline-block
-		// margin-right: 80px
-		// &:last-child
-		// 	margin-right: 0
 		p
 			font: em(14px) 'RalewayBold', $helvetica
 	.img-wrap
@@ -839,8 +837,29 @@ button
 			color: #1a1919
 			&:focus
 				color: $main-color
-
 // ----------------------------------------------------- section 8 end --------------------------------------------
+
+// ----------------------------------------------------- footer --------------------------------------------
+footer
+	background-color: #2c3949
+	&::before
+		background: url(../img/bah_2.png)
+	.logo, .tel, .menu
+		opacity: .5
+
+.footer-line
+	padding: 75px 0 55px
+
+.arrow-up
+	text-align: center
+	background-color: #1f2b3a
+	a
+		display: inline-block
+		padding: 20px
+		background: url('../img/arrow_up.png') no-repeat 50%
+		&:hover::after
+			display: none
+// ----------------------------------------------------- footer end --------------------------------------------
 
 
 
