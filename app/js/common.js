@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	
+
 	$(".toggle-menu").click(function() {
 		$(this).toggleClass("on");
 		$(".main-menu").slideToggle();
@@ -38,6 +40,12 @@ $(document).ready(function() {
 	});
 
 
+	$(".owl-carousel").owlCarousel({
+		items: 1,
+		nav: true,
+		navText: '',
+		loop: true
+	});
 
 
 	//SVG Fallback
@@ -66,6 +74,5 @@ $(document).ready(function() {
 	});
 
 
-	
 
 });

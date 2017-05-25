@@ -19,7 +19,8 @@
     "jquery": "2.2.1",
     "jQuery.equalHeights": "jquery.equalheights#^1.5.2",
     "waypoints": "^4.0.1",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "owl.carousel": "^2.2.1"
   },
   "devDependencies": {
     "bootstrap": "v4.0.0-alpha.6"

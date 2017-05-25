@@ -583,6 +583,9 @@ button
 
 // ----------------------------------------------------- section 4 --------------------------------------------
 .advantages
+	background-color: #e5e5e5
+	&::before
+		background-image: url("../img/bah_3.png")
 	.section-content
 		padding-top: 0
 		padding-bottom: 50px
@@ -697,6 +700,7 @@ button
 .feedback
 	.section-content
 		padding-top: 0
+		padding-bottom: 50px
 
 
 
@@ -730,16 +734,73 @@ button
 	padding: 45px 25px 35px
 	background-color: #e5e5e5
 	border-bottom: 3px solid #d6d6d6
-
-
-
-
-
-
-
-
 // ----------------------------------------------------- section 6 end --------------------------------------------
 
+// ----------------------------------------------------- section 7  --------------------------------------------
+.comments
+	background-color: #e5e5e5
+	&::before
+		background-image: url("../img/bah_3.png")
+	.section-content
+		padding-top: 0
+		padding-bottom: 50px
+	.slide
+		position: relative
+		> *
+			text-align: center
+	.img-wrap
+		width: 120px
+		height: 120px
+		margin: 15px auto 0
+		position: relative
+		border-radius: 50%
+		overflow: hidden
+		text-align: center
+		box-shadow: 0 0 0 7px $accent-color
+		img
+			width: 100%
+			position: absolute
+			left: 5px
+			transform: scale(1.1)
+	h5
+		margin-bottom: 10px
+		font-size: em(18px)
+		color: #333
+		text-transform: none
+	.comment-descr
+		margin-bottom: 20px
+		text-align: center
+		color: #6e7b8b
+		font-size: em(14px)
+	p
+		padding: 0 210px
+		font-size: em(15px)
+		color: #333
+
+	.owl-carousel
+		.owl-nav
+			> div
+				width: 32px
+				height: 58px
+				tr
+				position: absolute
+				top: 16%
+				background: url('../img/slider_arrows.png') no-repeat 50%
+			.owl-prev
+				left: 10%
+				background-position: 16px 50%
+			.owl-next
+				right: 10%
+				background-position: -16px 50%
+		.owl-dots
+			.active
+				span
+					background-color: $accent-color
+
+
+
+
+// ----------------------------------------------------- section 7 end --------------------------------------------
 
 
 
