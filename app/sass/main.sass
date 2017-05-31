@@ -6,32 +6,32 @@
 
 
 // *::-webkit-input-placeholder
-// 	color: #fff
-// 	font-size: em(19px)
-// 	opacity: .5
+//  color: #fff
+//  font-size: em(19px)
+//  opacity: .5
 
 // *:-moz-placeholder
-// 	font-size: em(19px)
-// 	color: #fff
-// 	opacity: .5
+//  font-size: em(19px)
+//  color: #fff
+//  opacity: .5
 
 // *::-moz-placeholder
-// 	color: #fff
-// 	font-family: $helvetica
-// 	font-size: em(19px)
-// 	opacity: .5
+//  color: #fff
+//  font-family: $helvetica
+//  font-size: em(19px)
+//  opacity: .5
 
 // *:-ms-input-placeholder
-// 	color: #fff
-// 	font-size: em(19px)
-// 	opacity: .5
+//  color: #fff
+//  font-size: em(19px)
+//  opacity: .5
 
 // body input:focus:required:invalid,
 // body textarea:focus:required:invalid
-// 	color: #fff
+//  color: #fff
 // body input:required:valid,
 // body textarea:required:valid
-// 	color: #fff
+//  color: #fff
 
 html, body
 	height: 100%
@@ -491,6 +491,34 @@ button
 		transform: scale(1.1)
 // ----------------------------------------------------- section 1 end ----------------------------------------
 
+.b-top
+	z-index: 1
+	position: fixed
+	left: 0
+	bottom: 90px
+	width: 34%
+	margin-left: 55%
+	opacity: 0.5
+	filter: alpha(opacity=50)
+.b-top
+	&:hover
+		opacity: 1
+		filter: alpha(opacity=100)
+		cursor: pointer
+.b-top-but
+	z-index: 2600
+	position: absolute
+	display: block
+	width: 50px
+	height: 35px
+	left: 56px
+	bottom: 0
+	margin: 0 0 0 100%
+	padding: 3px 2px 12px 4px
+	color: white
+	background: #394b5f url(http://alaev.info/wp-content/plugins/goupbutt/b-j-top.png) no-repeat 50% 11px
+	border-radius: 7px
+
 // ----------------------------------------------------- section 2 ----------------------------------------
 .deals
 	.section-content
@@ -710,7 +738,7 @@ button
 	flex-flow: row wrap
 	justify-content: space-around
 	align-items: center
-	visibility: hidden 	//для корректной работы animate.css .team изначально hidden, а добавляемому с помощью jquery классу .animate - visible
+	visibility: hidden  //для корректной работы animate.css .team изначально hidden, а добавляемому с помощью jquery классу .animate - visible
 	h5
 		margin-bottom: 5px
 		font-size: em(18px)

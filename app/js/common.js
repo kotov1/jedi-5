@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$(".feedback .team .team-member").equalHeights();
 
 
-	$(".advantages").waypoint(function() {		//animation in section "advantages"
+	$(".advantages").waypoint(function() {    //animation in section "advantages"
 
 		$(".advantages .card").each(function(index) {
 			var ths = $(this);
@@ -26,7 +26,7 @@ $(document).ready(function() {
 		offset : "20%"
 	});
 
-	$(".feedback").waypoint(function() {		//animation in section "feedback"
+	$(".feedback").waypoint(function() {    //animation in section "feedback"
 
 		$(".feedback .team-member").each(function(index) {
 			var ths = $(this);
@@ -48,13 +48,20 @@ $(document).ready(function() {
 	});
 
 
+	$(window).scroll(function () {if ($(this).scrollTop() > 0) {$('#scroller').fadeIn();} else {$('#scroller').fadeOut();}});
+	$('#scroller').click(function () {$('body,html').animate({scrollTop: 0}, 300); return false;});	//0 - margin-top; 400 - scrolling speed
+	
+
+
+
+
+
 	//SVG Fallback
 	if(!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function() {
 			return $(this).attr("src").replace(".svg", ".png");
 		});
 	};
-
 
 	// E-mail Ajax Send
 	$(".mail").submit(function() { //Change
@@ -72,7 +79,6 @@ $(document).ready(function() {
 		});
 		return false;
 	});
-
 
 
 });
