@@ -2,14 +2,14 @@ $(document).ready(function() {
 
 	
 
-	$(".toggle-menu").click(function() {
+	$(".toggle-menu").click(function() { 	//адаптивное меню
 		$(this).toggleClass("on");
 		$(".main-menu").slideToggle();
 		return false;
 	});
 
 
-	$(".advantages .cards .card").equalHeights(),
+	$(".advantages .cards .card").equalHeights(),			// блоки одинаковой высоты
 	$(".feedback .team .team-member").equalHeights();
 
 
@@ -40,6 +40,11 @@ $(document).ready(function() {
 	});
 
 
+	$('h2').animated('fadeInRight');
+
+
+
+
 	$(".owl-carousel").owlCarousel({
 		items: 1,
 		nav: true,
@@ -48,8 +53,17 @@ $(document).ready(function() {
 	});
 
 
-	$(window).scroll(function () {if ($(this).scrollTop() > 0) {$('#scroller').fadeIn();} else {$('#scroller').fadeOut();}});
-	$('#scroller').click(function () {$('body,html').animate({scrollTop: 0}, 300); return false;});	//0 - margin-top; 400 - scrolling speed
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {			//100-отступ от верхнего края страницы при котором появится кнопка
+			$('#scroller').fadeIn();
+		} else {
+			$('#scroller').fadeOut();
+		}
+	});
+	$('#scroller').click(function () {
+		$('body,html').animate({scrollTop: 0}, 300);	//0 - margin-top; 300 - scrolling speed
+		 return false;
+		 });	
 	
 
 
