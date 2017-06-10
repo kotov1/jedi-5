@@ -1,19 +1,21 @@
 $(document).ready(function() {
 
 	
-
-	$(".toggle-menu").click(function() { 	//адаптивное меню
+	//адаптивное меню
+	$(".toggle-menu").click(function() {
 		$(this).toggleClass("on");
 		$(".main-menu").slideToggle();
 		return false;
 	});
 
 
-	$(".advantages .cards .card").equalHeights(),			// блоки одинаковой высоты
+	// блоки одинаковой высоты
+	$(".advantages .cards .card").equalHeights(),
 	$(".feedback .team .team-member").equalHeights();
 
 
-	$(".advantages").waypoint(function() {    //animation in section "advantages"
+	//animation in section "advantages"
+	$(".advantages").waypoint(function() {
 
 		$(".advantages .card").each(function(index) {
 			var ths = $(this);
@@ -26,7 +28,8 @@ $(document).ready(function() {
 		offset : "20%"
 	});
 
-	$(".feedback").waypoint(function() {    //animation in section "feedback"
+	//animation in section "feedback"
+	$(".feedback").waypoint(function() {
 
 		$(".feedback .team-member").each(function(index) {
 			var ths = $(this);
@@ -40,11 +43,14 @@ $(document).ready(function() {
 	});
 
 
-	$('h2').animated('fadeInRight');
+	// Простые анимации 
+	$('.section-head').animated('fadeInRight');
+
+	$('.evaluation-item, .info-item, .deals-item, .awards-item').animated('fadeIn');
 
 
 
-
+	//Карусель в блоке comments
 	$(".owl-carousel").owlCarousel({
 		items: 1,
 		nav: true,
@@ -53,8 +59,9 @@ $(document).ready(function() {
 	});
 
 
+	//Появление кнопки "вверх" и плавный скроллинг к верху страницы
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) {			//100-отступ от верхнего края страницы при котором появится кнопка
+		if ($(this).scrollTop() > 100 && $(this).scrollTop() < $(document).height()-1000) {			//100-отступ от верхнего края страницы при котором появится кнопка
 			$('#scroller').fadeIn();
 		} else {
 			$('#scroller').fadeOut();
@@ -66,6 +73,11 @@ $(document).ready(function() {
 		 });	
 	
 
+	//Анимация скролинга  нижней кнопки "вверх", согласно макета
+	$('.arrow-up a').click(function () {
+		$('body,html').animate({scrollTop: 0}, 500);
+		 return false;
+		 });	
 
 
 
@@ -88,6 +100,7 @@ $(document).ready(function() {
 			alert("Thank you!");
 			setTimeout(function() {
 				// Done Functions
+				$.magnificPopup.close();
 				th.trigger("reset");
 			}, 1000);
 		});
