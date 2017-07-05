@@ -55,13 +55,15 @@ $(document).ready(function() {
 		items: 1,
 		nav: true,
 		navText: '',
+		autoplay : true,
+		autoplayHoverPause : true,
 		loop: true
 	});
 
 
 	//Появление кнопки "вверх" и плавный скроллинг к верху страницы
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100 && $(this).scrollTop() < $(document).height()-1000) {			//100-отступ от верхнего края страницы при котором появится кнопка
+		if ($(this).scrollTop() > 100) {			//100-отступ от верхнего края страницы при котором появится кнопка
 			$('#scroller').fadeIn();
 		} else {
 			$('#scroller').fadeOut();
@@ -79,7 +81,22 @@ $(document).ready(function() {
 		 return false;
 		 });	
 
+	//попап окно с формой обратной связи
+	$('button').click(function() {
+		$('#callback h4').html($(this).text());
+	}).magnificPopup({
+		// closeBtnInside: true,
+		items: {
+				src: $('#callback'),
+				type: 'inline'
+		},
+		mainClass: 'mfp-forms'
+	});
 
+	// $('.submit').magnificPopup({
+	// 	type:'inline',
+	// 	midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+	// });
 
 
 	//SVG Fallback
@@ -90,11 +107,11 @@ $(document).ready(function() {
 	};
 
 	// E-mail Ajax Send
-	$(".mail").submit(function() { //Change
+	$(".mail").submit(function() { 	//Change
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "../../mail.php", //Change
+			url: "/mail.php", 				//Change
 			data: th.serialize()
 		}).done(function() {
 			alert("Thank you!");

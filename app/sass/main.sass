@@ -54,6 +54,7 @@ input
 
 .animated
 	visibility: visible //для корректной работы animate.css .cards изначально hidden, а добавляемому с помощью jquery классу .animate - visible
+	
 // ------------------------------------------some general styles------------------------------------
 
 *
@@ -86,6 +87,9 @@ h3
 	text-transform: uppercase
 	text-align: center
 	color: #394b5f
+	a
+		text-decoration: none
+
 
 h4
 	font: em(22px)'PFCentroSlabProMedium'
@@ -103,6 +107,9 @@ h5
 	height: 50px
 	background: $accent-color
 	box-shadow: inset 0 -3px 0 rgba(#b97200, .75)
+
+.hidden
+	display: none
 
 b, strong
 	font-weight: normal
@@ -332,47 +339,47 @@ img[src*=logo]
 		&::after
 			height: 2px
 
-	form
-		padding: 30px 30px 35px
-		background-color: #243343
-		opacity: .85
-		box-shadow: 0 3px 0 #1a232d
+.mail
+	padding: 30px 30px 35px
+	background-color: #243343
+	opacity: .85
+	box-shadow: 0 3px 0 #1a232d
 
-		.form-head
-			margin-bottom: 30px
-			padding: 0 5px
+	.form-head
+		margin-bottom: 30px
+		padding: 0 5px
 
-		h4
-			margin: 0
-			font: em(28px) 'PFCentroSlabProMedium', $helvetica
+	h4
+		margin: 0
+		font: em(28px) 'PFCentroSlabProMedium', $helvetica
 
-		p
-			font-size: em(15px)
-			color: #97a4b2
+	p
+		font-size: em(15px)
+		color: #97a4b2
 
-		label
-			display: block
-			font-size: em(14px)
-			color: #778390
-			letter-spacing: .9px
-		input[type="text"],
-		input[type="tel"]
-			display: block
-			width: 100%
-			height: 40px
-			margin: 5px 0 20px 0
-			padding: 0 5px
-			background-color: #34465a
-			box-shadow: 0 -3px 0 #1a232d
-			font: em(18px) $helvetica
+	label
+		display: block
+		font-size: em(14px)
+		color: #778390
+		letter-spacing: .9px
+	input[type="text"],
+	input[type="tel"]
+		display: block
+		width: 100%
+		height: 40px
+		margin: 5px 0 20px 0
+		padding: 0 5px
+		background-color: #34465a
+		box-shadow: 0 -3px 0 #1a232d
+		font: em(18px) $helvetica
+		color: #fff
+		opacity: .5
+		&:focus
 			color: #fff
-			opacity: .5
-			&:focus
-				color: #fff
-				opacity: 1
-				box-shadow: 0 -3px 0 $accent-color
-				&::-moz-placeholder
-					opacity: 0
+			opacity: 1
+			box-shadow: 0 -3px 0 $accent-color
+			&::-moz-placeholder
+				opacity: 0
 
 	input[type="submit"]
 		display: block
@@ -418,7 +425,7 @@ section
 
 .evaluation
 	.section-content
-		background: url(../img/s1_gray_bg2.png) no-repeat 50% 0
+		background: url(../img/s1_gray_bg.png) no-repeat 50% 0
 		div[class*='col']
 			padding: 0 70px
 
@@ -486,9 +493,11 @@ button
 	@extend .submit
 	border: none
 	border-radius: 3px
-	transition: all .4s
+	transition: all .2s
 	&:hover
 		transform: scale(1.1)
+	&:active
+		transform: scale(1)
 // ----------------------------------------------------- section 1 end ----------------------------------------
 // ------------button top styles----------------------
 .b-top
@@ -815,6 +824,7 @@ button
 				position: absolute
 				top: 16%
 				background: url('../img/slider_arrows.png') no-repeat 50%
+				opacity: .5 
 			.owl-prev
 				left: 10%
 				background-position: 16px 50%
@@ -825,6 +835,40 @@ button
 			.active
 				span
 					background-color: $accent-color
+
+.owl-item
+	.slide
+		.img-wrap
+			opacity: 0
+			transform: translate3d(200px, 0, 0)
+		h5
+			opacity: 0
+			transform: translate3d(200px, 0, 0)
+		.comment-descr
+			opacity: 0
+			transform: translate3d(200px, 0, 0)
+		p
+			opacity: 0
+			transform: translate3d(200px, 0, 0)
+		
+	&.active
+		.slide
+			.img-wrap
+				opacity: 1
+				transform: translate3d(0, 0, 0)
+				transition: all .7s ease .2s
+			h5
+				opacity: 1
+				transform: translate3d(0, 0, 0)
+				transition: all .7s ease .4s
+			.comment-descr
+				opacity: 1
+				transform: translate3d(0, 0, 0)
+				transition: all .7s ease .5s
+			p
+				opacity: 1
+				transform: translate3d(0, 0, 0)
+				transition: all .7s ease .7s
 
 // ----------------------------------------------------- section 7 end --------------------------------------------
 
@@ -889,12 +933,34 @@ footer
 			display: none
 // ----------------------------------------------------- footer end --------------------------------------------
 
+#callback
+	max-width: 400px
+	margin: 0 auto
+	position: relative
+	h4
+		margin-bottom: 30px 
 
+.mfp-close-btn-in .mfp-close
+	// right: 50px
+	color: #FFF
+	
 
-
-h3
-	a
-		text-decoration: none
+.mfp-forms
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.15s ease-out
+	&.mfp-ready
+		opacity: 0.9
+	&.mfp-removing
+		opacity: 0
+	&.mfp-wrap
+		.mfp-content
+			opacity: 0
+			transition: all 0.15s ease-out
+		&.mfp-ready .mfp-content
+			opacity: 1
+		&.mfp-removing .mfp-content
+			opacity: 0
 
 
 @import "media" // Всегда в конце
